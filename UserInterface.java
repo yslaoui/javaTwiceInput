@@ -6,11 +6,11 @@ import java.util.Scanner;
 public class UserInterface {
 
     Scanner scanner;
-    ArrayList<String> words;
+    WordSet wordset;
 
     public UserInterface(Scanner scanner) {
         this.scanner = scanner;
-        this.words = new ArrayList<>();
+        this.wordset = new WordSet();
     }
 
     public void start() {
@@ -18,11 +18,11 @@ public class UserInterface {
         while(true) {
             System.out.print("Write a word: ");
             word = this.scanner.nextLine();
-            if (this.words.contains(word)) {
+            if (this.wordset.contains(word)) {
                 System.out.println("You entered this word twice !");
                 break;
             }
-            words.add(word);
+            this.wordset.add(word);
         }
     }
 }
